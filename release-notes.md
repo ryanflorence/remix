@@ -2,7 +2,7 @@
 
 We're _**so**_ excited to release Remix v2 to you and we really hope this upgrade is one of the smoothest framework upgrades you've ever experienced! That was our primary goal with v2 - something we aimed to achieve through a heavy use of deprecation warnings and [Future Flags](https://remix.run/blog/future-flags) in Remix v1.
 
-If you are on the latest `1.x` version and you've enabled all future flags and addressed all console warnings, then our hope is that you are 90%+ of the way to being upgraded for v2. There are always going to be a few things that we _can't_ put behind a flag (like breaking types changes) or come up at the very last moment and don't have time to add as a warning or flag in `1.x`.
+If you are on the latest `1.x` version and you've enabled all future flags and addressed all console warnings, then our hope is that you are 90% of the way to being upgraded for v2. There are always going to be a few things that we _can't_ put behind a flag (like breaking type changes) or come up at the very last moment and don't have time to add as a warning or flag in `1.x`.
 
 If you're _not_ yet on the latest 1.x version we'd recommend first upgrading to that and resolving any flag/console warnings:
 
@@ -152,11 +152,11 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 
 **Full Changelog**: [`1.19.3...2.0.0`](https://github.com/remix-run/remix/compare/remix@1.19.3...remix@2.0.0)
 
-[v2dev]: https://remix.run/docs/en/release-next/guides/v2#remix-dev
-[v2errorboundary]: https://remix.run/docs/en/release-next/guides/v2#catchboundary-and-errorboundary
-[v2headers]: https://remix.run/docs/en/dev/guides/v2#route-headers
-[v2meta]: https://remix.run/docs/en/release-next/guides/v2#route-meta
-[v2normalizeformmethod]: https://remix.run/docs/en/release-next/guides/v2#formmethod
+[v2dev]: https://remix.run/docs/en/2.0.0/guides/v2#remix-dev
+[v2errorboundary]: https://remix.run/docs/en/2.0.0/guides/v2#catchboundary-and-errorboundary
+[v2headers]: https://remix.run/docs/en/2.0.0/guides/v2#route-headers
+[v2meta]: https://remix.run/docs/en/2.0.0/guides/v2#route-meta
+[v2normalizeformmethod]: https://remix.run/docs/en/2.0.0/guides/v2#formmethod
 [v2routeconvention]: https://remix.run/docs/en/2.0.0/guides/v2#file-system-route-convention
 [usetransition]: https://remix.run/docs/en/2.0.0/guides/v2#usetransition
 [usefetcher]: https://remix.run/docs/en/2.0.0/guides/v2#usefetcher
@@ -178,5 +178,4 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 [createremix]: https://remix.run/docs/en/2.0.0/other-api/create-remix
 [templates]: https://remix.run/docs/en/2.0.0/guides/templates
 [changesbypackage]: #changes-by-package
-[preparingforv2]: https://remix.run/docs/en/dev/guides/v2
-[minimumdependencies]: #minimum-dependencies
+[preparingforv2]: https://remix.run/docs/en/2.0.0/guides/v2
