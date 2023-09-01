@@ -7819,7 +7819,7 @@ Phew! And there we have it. If you made it through this whole thing then I'm rea
 [a-404-on-the-joke-page]: /jokes-tutorial/img/joke-404.png
 [a-404-on-the-random-joke-page]: /jokes-tutorial/img/jokes-404.png
 [a-401-on-the-new-joke-page]: /jokes-tutorial/img/new-joke-401.png
-[meta]: ../route/meta-v2
+[meta]: ../route/meta
 [meta-component]: ../components/meta
 [resource-routes]: ../guides/resource-routes
 [escaping-special-characters-here]: ../file-conventions/routes-files#escaping-special-characters
