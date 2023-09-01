@@ -96,9 +96,19 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 - `remix`
   - Removed magic exports ([#6895](https://github.com/remix-run/remix/pull/6895))
 
-* Breaking Type Changes
-  - ❓ Do we know anything here offhand?
-  - V2_MetaFunction => MetaFunction
+#### Breaking Type Changes
+
+- `V2_MetaArgs` -> `MetaArgs`
+- `V2_MetaDescriptor` -> `MetaDescriptor`
+- `V2_MetaFunction` -> `MetaFunction`
+- `V2_MetaMatch` -> `MetaMatch`
+- `V2_MetaMatches` -> `MetaMatches`
+- `V2_ServerRuntimeMetaArgs` -> `ServerRuntimeMetaArgs`
+- `V2_ServerRuntimeMetaDescriptor` -> `ServerRuntimeMetaDescriptor`
+- `V2_ServerRuntimeMetaFunction` -> `ServerRuntimeMetaFunction`
+- `V2_ServerRuntimeMetaMatch` -> `ServerRuntimeMetaMatch`
+- `V2_ServerRuntimeMetaMatches` -> `ServerRuntimeMetaMatches`
+- ❓ Anything else?
 
 ## New Features
 
