@@ -17,6 +17,16 @@ Below is a _very concise_ list of the breaking changes in v2.
 - For the most thorough discussion of breaking changes, please read the [**Preparing for v2**][preparingforv2] guide. This document provides a comprehensive walkthrough of the breaking changes that come along with v2 - and instructions on how to adapt your application to handle them
 - For additional details, you can refer to the [Changes by Package][changesbypackage] section below
 
+### Upgraded Dependency Requirements
+
+Remix v2 has upgraded it's minimum version support for React and Node and officially supports:
+
+- React 18 ([#7121](https://github.com/remix-run/remix/pull/7121))
+  - ❓ Do we want to add a section to the Preparing for v2 docs on this?
+- Node 18 ([#6939](https://github.com/remix-run/remix/pull/6939), [#7292](https://github.com/remix-run/remix/pull/7292))
+  - Please refer to the [documentation][node-version-support] for an explanation of when we drop support for Node versions
+  - ❓ Do we want to add a section to the Preparing for v2 docs on this?
+
 ### Removed Future Flags
 
 The following future flags were removed and their behavior is now the default:
@@ -28,14 +38,6 @@ The following future flags were removed and their behavior is now the default:
 - [`v2_normalizeFormMethod`][v2normalizeformmethod] - Normalize `formMethod` APIs to uppercase ([#6875](https://github.com/remix-run/remix/pull/6875))
 - [`v2_routeConvention`][v2routeconvention] - Routes use a flat route convention by default now ([#6969](https://github.com/remix-run/remix/pull/6969))
 
-### Minimum Dependencies
-
-Remix v2 has upgraded it's minimum version support for React and Node and officially supports:
-
-- ⭕️ React 18 ([#7121](https://github.com/remix-run/remix/pull/7121))
-- ⭕️ Node 18 ([#6939](https://github.com/remix-run/remix/pull/6939), [#7292](https://github.com/remix-run/remix/pull/7292))
-  - Please refer to the [documentation][node-version-support] for an explanation of when we drop support for Node versions
-
 ### Breaking Changes/API Removals
 
 #### With deprecation warnings
@@ -46,7 +48,7 @@ The following lists other breaking changes/API removals which had deprecation wa
   - Renamed [`browserBuildDirectory`][browserbuilddirectory] to `assetsBuildDirectory` ([#6900](https://github.com/remix-run/remix/pull/6900))
   - Removed [`devServerBroadcastDelay`][devserverbroadcastdelay] ([#7063](https://github.com/remix-run/remix/pull/7063))
   - Renamed [`devServerPort`][devserverport] to `dev.port` ([`000457e0`](https://github.com/remix-run/remix/commit/000457e0ae025d9b94e721af254c319e83438923))
-    - ⭕️ Preparing for v2 shows `v2_dev.port` - what's the best way to communicate this nuance?
+    - ❓ The Preparing for v2 docs show `v2_dev.port`, but it's actually just dev.port in actual v2 - what's the best way to communicate this nuance?
   - Changed the default [`serverModuleFormat`][servermoduleformat] from `cjs` to `esm` ([#6949](https://github.com/remix-run/remix/pull/6949))
   - Removed [`serverBuildTarget`][serverbuildtarget] ([#6896](https://github.com/remix-run/remix/pull/6896))
   - Changed [`serverBuildDirectory`][serverbuilddirectory] to `serverBuildPath` ([#6897](https://github.com/remix-run/remix/pull/6897))
@@ -96,7 +98,7 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 
 * Breaking Type Changes
   - ❓ Do we know anything here offhand?
-  - V2_MEtaFunction => MetaFunction
+  - V2_MetaFunction => MetaFunction
 
 ## New Features
 
@@ -167,3 +169,4 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 [templates]: https://remix.run/docs/en/2.0.0/guides/templates
 [changesbypackage]: #changes-by-package
 [preparingforv2]: https://remix.run/docs/en/dev/guides/v2
+[minimumdependencies]: #minimum-dependencies
