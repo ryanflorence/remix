@@ -32,6 +32,7 @@ Remix v2 has upgraded it's minimum version support for React and Node and offici
 The following future flags were removed and their behavior is now the default:
 
 - [`v2_dev`][v2dev] - New dev server with HMR+HDR ([#7002](https://github.com/remix-run/remix/pull/7002))
+  - ❓ Add note here and/or in the PReparing for v2 docs on moving any `future.v2_dev.whatever` flags up to `dev.*`
 - [`v2_errorBoundary`][v2errorboundary] - Removed `CatchBoundary` in favor of a singular `ErrorBoundary` ([#6906](https://github.com/remix-run/remix/pull/6906))
 - [`v2_headers`][v2headers] - Altered the logic for `headers` in nested route scenarios ([#6979](https://github.com/remix-run/remix/pull/6979))
 - [`v2_meta`][v2meta] - Altered the return format of `meta()` ([#6958](https://github.com/remix-run/remix/pull/6958))
