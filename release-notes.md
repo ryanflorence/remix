@@ -82,6 +82,7 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
   - The [`@remix-run/netlify`][netlifyadapter] adapter has been removed in favor of the Netlify official adapters ([#7058](https://github.com/remix-run/remix/pull/7058))
 - `@remix-run/node`
   - `fetch` is no longer polyfilled by default - apps must call [`installGlobals()`][installglobals] to install the polyfills ([#7009](https://github.com/remix-run/remix/pull/7009))
+  - `fetch` and related APIs are no longer exported from `@remix-run/node` - apps should use the versions in the global namespace ([#7293](https://github.com/remix-run/remix/pull/7293))
   - Apps must call [`sourceMapSupport.install()`][sourcemapsupport] to setup source map support
 - `@remix-run/react`
   - Remove `unstable_shouldReload` in favor of `shouldRevalidate` ([#6865](https://github.com/remix-run/remix/pull/6865))
@@ -109,6 +110,16 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 - `V2_ServerRuntimeMetaFunction` -> `ServerRuntimeMetaFunction`
 - `V2_ServerRuntimeMetaMatch` -> `ServerRuntimeMetaMatch`
 - `V2_ServerRuntimeMetaMatches` -> `ServerRuntimeMetaMatches`
+- `AppData`/`RouteHandle` are no longer exported as they are just aliases for `unknown`
+- The following types were adjusted to align with underlying React Router types ([#7319](https://github.com/remix-run/remix/pull/7319)):
+  - Renamed the `useMatches()` return type from `RouteMatch` to `UIMatch`
+  - Renamed `LoaderArgs`/`ActionArgs` to `LoaderFunctionArgs`/`ActionFunctionArgs`
+  - `AppData` changed from `any` to `unknown`
+  - `Location["state"]` (`useLocation.state`) changed from `any` to `unknown`
+  - `UIMatch["data"]` (`useMatches()[i].data`) changed from `any` to `unknown`
+  - `UIMatch["handle"]` (`useMatches()[i].handle`) changed from `{ [k: string]: any }` to `unknown`
+  - `Fetcher["data"]` (`useFetcher().data`) changed from `any` to `unknown`
+  - `MetaMatch.handle` (used in `meta()`) changed from `any` to `unknown`
 - ❓ Anything else?
 
 ## New Features
@@ -128,9 +139,12 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 
 - Remix now uses React Router's `route.lazy` method internally to load route modules on navigations ([#7133](https://github.com/remix-run/remix/pull/7133))
 - Removed the `@remix-run/node` `atob`/`btoa` polyfills in favor of the built-in versions ([#7206](https://github.com/remix-run/remix/pull/7206))
-- Updated React Router dependencies:
+- Updated dependencies:
   - [`react-router-dom@6.16.0`](https://github.com/remix-run/react-router/releases/tag/react-router%406.16.0)
   - [`@remix-run/router@1.9.0`](https://github.com/remix-run/react-router/blob/main/packages/router/CHANGELOG.md#190)
+  - [`@remix-run/web-fetch@4.4.0`](https://github.com/remix-run/web-std-io/releases/tag/%40remix-run%2Fweb-fetch%404.4.0)
+  - [`@remix-run/web-file@3.1.0`](https://github.com/remix-run/web-std-io/releases/tag/%40remix-run%2Fweb-file%403.1.0)
+  - [`@remix-run/web-stream@1.1.0`](https://github.com/remix-run/web-std-io/releases/tag/%40remix-run%2Fweb-stream%401.1.0)
 
 ## Changes by Package
 
