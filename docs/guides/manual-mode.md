@@ -290,8 +290,11 @@ import { remember } from "~/utils/remember";
 export const db = remember("db", () => new PrismaClient());
 ```
 
+Alternatively, you could use [`@epic-web/remember`][@epic-web/remember] which packages this up nicely.
+
 [mental-model]: https://www.youtube.com/watch?v=zTrjaUt9hLo
 [express]: https://expressjs.com/
 [chokidar]: https://github.com/paulmillr/chokidar
 [templates]: https://github.com/remix-run/remix/blob/main/templates/
 [community-examples]: https://github.com/xHomu/remix-v2-server
+[@epic-web/remember]: https://github.com/epicweb-dev/remember
