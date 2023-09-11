@@ -71,7 +71,7 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
   - Drop `@cloudflare/workers-types` v2 & v3 support ([#6925](https://github.com/remix-run/remix/pull/6925))
 - `@remix-run/dev`
   - Removed `REMIX_DEV_HTTP_ORIGIN` in favor of `REMIX_DEV_ORIGIN` ([#6963](https://github.com/remix-run/remix/pull/6963))
-  - Removed `REMIX_DEV_SERVER_WS_PORT` in fvor of `dev.port` or `--port` ([#6965](https://github.com/remix-run/remix/pull/6965))
+  - Removed `REMIX_DEV_SERVER_WS_PORT` in favor of `dev.port` or `--port` ([#6965](https://github.com/remix-run/remix/pull/6965))
   - Removed `--no-restart`/`restart` flag in favor of `--manual`/`manual` ([#6962](https://github.com/remix-run/remix/pull/6962))
   - Removed `--scheme`/`scheme` and `--host`/`host` in favor of `REMIX_DEV_ORIGIN` instead ([#6962](https://github.com/remix-run/remix/pull/6962))
   - Removed the `codemod` command ([#6918](https://github.com/remix-run/remix/pull/6918))
