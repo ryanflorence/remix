@@ -22,14 +22,14 @@ Below is a _very concise_ list of the breaking changes in v2.
 Remix v2 has upgraded it's minimum version support for React and Node and officially supports:
 
 - React 18 ([#7121](https://github.com/remix-run/remix/pull/7121))
-  - ❓ Do we want to add a section to the Preparing for v2 docs on this?
+  - ❓ Can we link to react 18 upgrade guide
 - Node 18 ([#6939](https://github.com/remix-run/remix/pull/6939), [#7292](https://github.com/remix-run/remix/pull/7292))
   - Please refer to the [documentation][node-version-support] for an explanation of when we drop support for Node versions
-  - ❓ Do we want to add a section to the Preparing for v2 docs on this?
+  - ❓ Can we link to node 18 upgrade guide
 
 ### Removed Future Flags
 
-The following future flags were removed and their behavior is now the default:
+The following future flags were removed and their behavior is now the default - you can remove all of these from your `remix.config.js` file.
 
 - [`v2_dev`][v2dev] - New dev server with HMR+HDR ([#7002](https://github.com/remix-run/remix/pull/7002))
   - ❓ Add note here and/or in the PReparing for v2 docs on moving any `future.v2_dev.whatever` flags up to `dev.*`
@@ -65,6 +65,7 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 
 - `remix.config.js`
   - Node built-ins are no longer polyfilled by default, you must opt-into polyfills via [`browserNodeBuiltinsPolyfill`][browsernodebuiltinspolyfill] and [`serverNodeBuiltinsPolyfill`][servernodebuiltinspolyfill] ([#6911](https://github.com/remix-run/remix/pull/6911), [#7269](https://github.com/remix-run/remix/pull/7269))
+    - ❓ I thought we had a deprecation warning for this? Double check
   - PostCSS/Tailwind will be enabled by default if config files exist in your app, you may disable this via the [`postcss` and `tailwind`][postcsstailwind] flags ([#6909](https://github.com/remix-run/remix/pull/6909))
 - `@remix-run/cloudflare`
   - Remove `createCloudflareKVSessionStorage` ([#6898](https://github.com/remix-run/remix/pull/6898))
@@ -126,6 +127,7 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 
 - New [`create-remix`][createremix] CLI ([#6887](https://github.com/remix-run/remix/pull/6887))
   - Most notably, this removes the dropdown to choose your template/stack in favor of the `--template` flag and our ever-growing list of [available templates][templates]
+  - ❓ List out repo templates in this templates docs page
   - Adds a new `--overwrite` flag ([#7062](https://github.com/remix-run/remix/pull/7062))
   - Supports the `bun` package manager ([#7074](https://github.com/remix-run/remix/pull/7074))
 - Detect built mode via `build.mode` ([#6964](https://github.com/remix-run/remix/pull/6964))
@@ -195,3 +197,19 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 [templates]: https://remix.run/docs/en/2.0.0/guides/templates
 [changesbypackage]: #changes-by-package
 [preparingforv2]: https://remix.run/docs/en/2.0.0/guides/v2
+
+{
+future: {
+v2_dev: {
+port: 1234
+}
+}
+}
+
+{
+future: {
+},
+dev: {
+port: 1234
+}
+}
