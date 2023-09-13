@@ -25,7 +25,7 @@ Remix v2 has upgraded it's minimum version support for React and Node and now of
   - For information on upgrading to React 18, please see the React [upgrade guide][react18upgrade]
 - Node 18 or later ([#6939](https://github.com/remix-run/remix/pull/6939), [#7292](https://github.com/remix-run/remix/pull/7292))
   - For information on upgrading to Node 18, please see the Node [v18 announcement][node18upgrade]
-  - Please refer to the [Remix documentation][node-version-support] for an overview of when we drop support for Node versions
+  - Please refer to the [Remix documentation][nodeversionsupport] for an overview of when we drop support for Node versions
 
 ### Removed Future Flags
 
@@ -197,7 +197,7 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 [verceladapter]: https://remix.run/docs/en/2.0.0/start/v2#vercel-adapter
 [postcsstailwind]: https://remix.run/docs/en/2.0.0/start/v2#built-in-postcsstailwind-support
 [preparingforv2]: https://remix.run/docs/en/2.0.0/start/v2
-[node-version-support]: https://remix.run/docs/en/2.0.0/other-api/node#version-support
+[nodeversionsupport]: https://remix.run/docs/en/2.0.0/other-api/node#version-support
 [createremix]: https://remix.run/docs/en/2.0.0/other-api/create-remix
 [templates]: https://remix.run/docs/en/2.0.0/guides/templates
 [changesbypackage]: #changes-by-package
