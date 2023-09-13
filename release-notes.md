@@ -19,20 +19,20 @@ Below is a _very concise_ list of the breaking changes in v2.
 
 ### Upgraded Dependency Requirements
 
-Remix v2 has upgraded it's minimum version support for React and Node and officially supports:
+Remix v2 has upgraded it's minimum version support for React and Node and now officially supports:
 
 - React 18 ([#7121](https://github.com/remix-run/remix/pull/7121))
-  - ❓ Can we link to react 18 upgrade guide
-- Node 18 ([#6939](https://github.com/remix-run/remix/pull/6939), [#7292](https://github.com/remix-run/remix/pull/7292))
-  - Please refer to the [documentation][node-version-support] for an explanation of when we drop support for Node versions
-  - ❓ Can we link to node 18 upgrade guide
+  - For information on upgrading to React 18, please see the React [upgrade guide][react18upgrade]
+- Node 18 or later ([#6939](https://github.com/remix-run/remix/pull/6939), [#7292](https://github.com/remix-run/remix/pull/7292))
+  - For information on upgrading to Node 18, please see the Node [v18 announcement][node18upgrade]
+  - Please refer to the [Remix documentation][node-version-support] for an overview of when we drop support for Node versions
 
 ### Removed Future Flags
 
 The following future flags were removed and their behavior is now the default - you can remove all of these from your `remix.config.js` file.
 
 - [`v2_dev`][v2dev] - New dev server with HMR+HDR ([#7002](https://github.com/remix-run/remix/pull/7002))
-  - ❓ Add note here and/or in the PReparing for v2 docs on moving any `future.v2_dev.whatever` flags up to `dev.*`
+  - If you had configurations in `future.v2_dev` instead of just the boolean value (i.e., `future.v2_dev.port`), you can lift them into a root `dev` object in your `remix.config.js`
 - [`v2_errorBoundary`][v2errorboundary] - Removed `CatchBoundary` in favor of a singular `ErrorBoundary` ([#6906](https://github.com/remix-run/remix/pull/6906))
 - [`v2_headers`][v2headers] - Altered the logic for `headers` in nested route scenarios ([#6979](https://github.com/remix-run/remix/pull/6979))
 - [`v2_meta`][v2meta] - Altered the return format of `meta()` ([#6958](https://github.com/remix-run/remix/pull/6958))
@@ -49,10 +49,11 @@ The following lists other breaking changes/API removals which had deprecation wa
   - Renamed [`browserBuildDirectory`][browserbuilddirectory] to `assetsBuildDirectory` ([#6900](https://github.com/remix-run/remix/pull/6900))
   - Removed [`devServerBroadcastDelay`][devserverbroadcastdelay] ([#7063](https://github.com/remix-run/remix/pull/7063))
   - Renamed [`devServerPort`][devserverport] to `dev.port` ([`000457e0`](https://github.com/remix-run/remix/commit/000457e0ae025d9b94e721af254c319e83438923))
-    - ❓ The Preparing for v2 docs show `v2_dev.port`, but it's actually just dev.port in actual v2 - what's the best way to communicate this nuance?
+    - Note that if you are opting into this in a `1.x` release, your config flag will be `future.v2_dev.port`, but on a stable `2.x` release it will be `dev.port`
   - Changed the default [`serverModuleFormat`][servermoduleformat] from `cjs` to `esm` ([#6949](https://github.com/remix-run/remix/pull/6949))
   - Removed [`serverBuildTarget`][serverbuildtarget] ([#6896](https://github.com/remix-run/remix/pull/6896))
   - Changed [`serverBuildDirectory`][serverbuilddirectory] to `serverBuildPath` ([#6897](https://github.com/remix-run/remix/pull/6897))
+  - Node built-ins are no longer polyfilled on the server by default, you must opt-into polyfills via [`serverNodeBuiltinsPolyfill`][servernodebuiltinspolyfill] ([#6911](https://github.com/remix-run/remix/pull/6911)
 - `@remix-run/react`
   - Removed [`useTransition`][usetransition] ([#6870](https://github.com/remix-run/remix/pull/6870))
   - Removed [`fetcher.type`][usefetcher] and flattened [`fetcher.submission`][usefetcher] ([#6874](https://github.com/remix-run/remix/pull/6874))
@@ -64,8 +65,7 @@ The following lists other breaking changes/API removals which had deprecation wa
 Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking change or API removal 🙃. Here's a list of remaining changes that you may need to look into to upgrade to v2:
 
 - `remix.config.js`
-  - Node built-ins are no longer polyfilled by default, you must opt-into polyfills via [`browserNodeBuiltinsPolyfill`][browsernodebuiltinspolyfill] and [`serverNodeBuiltinsPolyfill`][servernodebuiltinspolyfill] ([#6911](https://github.com/remix-run/remix/pull/6911), [#7269](https://github.com/remix-run/remix/pull/7269))
-    - ❓ I thought we had a deprecation warning for this? Double check
+  - Node built-ins are no longer polyfilled in the browser by default, you must opt-into polyfills via [`browserNodeBuiltinsPolyfill`][browsernodebuiltinspolyfill] ([#7269](https://github.com/remix-run/remix/pull/7269))
   - PostCSS/Tailwind will be enabled by default if config files exist in your app, you may disable this via the [`postcss` and `tailwind`][postcsstailwind] flags ([#6909](https://github.com/remix-run/remix/pull/6909))
 - `@remix-run/cloudflare`
   - Remove `createCloudflareKVSessionStorage` ([#6898](https://github.com/remix-run/remix/pull/6898))
@@ -121,7 +121,6 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
   - `UIMatch["handle"]` (`useMatches()[i].handle`) changed from `{ [k: string]: any }` to `unknown`
   - `Fetcher["data"]` (`useFetcher().data`) changed from `any` to `unknown`
   - `MetaMatch.handle` (used in `meta()`) changed from `any` to `unknown`
-- ❓ Anything else?
 
 ## New Features
 
@@ -141,6 +140,11 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 
 - Remix now uses React Router's `route.lazy` method internally to load route modules on navigations ([#7133](https://github.com/remix-run/remix/pull/7133))
 - Removed the `@remix-run/node` `atob`/`btoa` polyfills in favor of the built-in versions ([#7206](https://github.com/remix-run/remix/pull/7206))
+- Decouple the `@remix-run/dev` package from the contents of the `@remix-run/css-bundle` package ([#6982](https://github.com/remix-run/remix/pull/6982))
+  - The contents of the `@remix-run/css-bundle` package are now entirely managed by the Remix compiler. Even though it's still recommended that your Remix dependencies all share the same version, this change ensures that there are no runtime errors when upgrading `@remix-run/dev` without upgrading `@remix-run/css-bundle`.
+- `remix-serve` now picks an open port if 3000 is taken ([#7278](https://github.com/remix-run/remix/pull/7278))
+  - If `PORT` env var is set, `remix-serve` will use that port
+  - Otherwise, `remix-serve` picks an open port (3000 unless that is already taken)
 - Updated dependencies:
   - [`react-router-dom@6.16.0`](https://github.com/remix-run/react-router/releases/tag/react-router%406.16.0)
   - [`@remix-run/router@1.9.0`](https://github.com/remix-run/react-router/blob/main/packages/router/CHANGELOG.md#190)
@@ -197,3 +201,5 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 [createremix]: https://remix.run/docs/en/2.0.0/other-api/create-remix
 [templates]: https://remix.run/docs/en/2.0.0/guides/templates
 [changesbypackage]: #changes-by-package
+[react18upgrade]: https://react.dev/blog/2022/03/08/react-18-upgrade-guide
+[node18upgrade]: https://nodejs.org/en/blog/announcements/v18-release-announce
