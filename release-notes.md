@@ -170,46 +170,30 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 
 **Full Changelog**: [`1.19.3...2.0.0`](https://github.com/remix-run/remix/compare/remix@1.19.3...remix@2.0.0)
 
-[v2dev]: https://remix.run/docs/en/2.0.0/guides/v2#remix-dev
-[v2errorboundary]: https://remix.run/docs/en/2.0.0/guides/v2#catchboundary-and-errorboundary
-[v2headers]: https://remix.run/docs/en/2.0.0/guides/v2#route-headers
-[v2meta]: https://remix.run/docs/en/2.0.0/guides/v2#route-meta
-[v2normalizeformmethod]: https://remix.run/docs/en/2.0.0/guides/v2#formmethod
-[v2routeconvention]: https://remix.run/docs/en/2.0.0/guides/v2#file-system-route-convention
-[usetransition]: https://remix.run/docs/en/2.0.0/guides/v2#usetransition
-[usefetcher]: https://remix.run/docs/en/2.0.0/guides/v2#usefetcher
-[imagesrcsetsizes]: https://remix.run/docs/en/2.0.0/guides/v2#links-imagesizes-and-imagesrcset
-[browserbuilddirectory]: https://remix.run/docs/en/2.0.0/guides/v2#browserbuilddirectory
-[devserverbroadcastdelay]: https://remix.run/docs/en/2.0.0/guides/v2#devserverbroadcastdelay
-[devserverport]: https://remix.run/docs/en/2.0.0/guides/v2#devserverport
-[serverbuilddirectory]: https://remix.run/docs/en/2.0.0/guides/v2#serverbuilddirectory
-[serverbuildtarget]: https://remix.run/docs/en/2.0.0/guides/v2#serverbuildtarget
-[servermoduleformat]: https://remix.run/docs/en/2.0.0/guides/v2#servermoduleformat
-[browsernodebuiltinspolyfill]: https://remix.run/docs/en/2.0.0/guides/v2#browsernodebuiltinspolyfill
-[servernodebuiltinspolyfill]: https://remix.run/docs/en/2.0.0/guides/v2#servernodebuiltinspolyfill
-[installglobals]: https://remix.run/docs/en/2.0.0/guides/v2#installglobals
-[sourcemapsupport]: https://remix.run/docs/en/2.0.0/guides/v2#source-map-support
-[netlifyadapter]: https://remix.run/docs/en/2.0.0/guides/v2#netlify-adapter
-[verceladapter]: https://remix.run/docs/en/2.0.0/guides/v2#vercel-adapter
-[postcsstailwind]: https://remix.run/docs/en/2.0.0/guides/v2#built-in-postcsstailwind-support
+[v2dev]: https://remix.run/docs/en/2.0.0/start/v2#remix-dev
+[v2errorboundary]: https://remix.run/docs/en/2.0.0/start/v2#catchboundary-and-errorboundary
+[v2headers]: https://remix.run/docs/en/2.0.0/start/v2#route-headers
+[v2meta]: https://remix.run/docs/en/2.0.0/start/v2#route-meta
+[v2normalizeformmethod]: https://remix.run/docs/en/2.0.0/start/v2#formmethod
+[v2routeconvention]: https://remix.run/docs/en/2.0.0/start/v2#file-system-route-convention
+[usetransition]: https://remix.run/docs/en/2.0.0/start/v2#usetransition
+[usefetcher]: https://remix.run/docs/en/2.0.0/start/v2#usefetcher
+[imagesrcsetsizes]: https://remix.run/docs/en/2.0.0/start/v2#links-imagesizes-and-imagesrcset
+[browserbuilddirectory]: https://remix.run/docs/en/2.0.0/start/v2#browserbuilddirectory
+[devserverbroadcastdelay]: https://remix.run/docs/en/2.0.0/start/v2#devserverbroadcastdelay
+[devserverport]: https://remix.run/docs/en/2.0.0/start/v2#devserverport
+[serverbuilddirectory]: https://remix.run/docs/en/2.0.0/start/v2#serverbuilddirectory
+[serverbuildtarget]: https://remix.run/docs/en/2.0.0/start/v2#serverbuildtarget
+[servermoduleformat]: https://remix.run/docs/en/2.0.0/start/v2#servermoduleformat
+[browsernodebuiltinspolyfill]: https://remix.run/docs/en/2.0.0/start/v2#browsernodebuiltinspolyfill
+[servernodebuiltinspolyfill]: https://remix.run/docs/en/2.0.0/start/v2#servernodebuiltinspolyfill
+[installglobals]: https://remix.run/docs/en/2.0.0/start/v2#installglobals
+[sourcemapsupport]: https://remix.run/docs/en/2.0.0/start/v2#source-map-support
+[netlifyadapter]: https://remix.run/docs/en/2.0.0/start/v2#netlify-adapter
+[verceladapter]: https://remix.run/docs/en/2.0.0/start/v2#vercel-adapter
+[postcsstailwind]: https://remix.run/docs/en/2.0.0/start/v2#built-in-postcsstailwind-support
+[preparingforv2]: https://remix.run/docs/en/2.0.0/start/v2
 [node-version-support]: https://remix.run/docs/en/2.0.0/other-api/node#version-support
 [createremix]: https://remix.run/docs/en/2.0.0/other-api/create-remix
 [templates]: https://remix.run/docs/en/2.0.0/guides/templates
 [changesbypackage]: #changes-by-package
-[preparingforv2]: https://remix.run/docs/en/2.0.0/guides/v2
-
-{
-future: {
-v2_dev: {
-port: 1234
-}
-}
-}
-
-{
-future: {
-},
-dev: {
-port: 1234
-}
-}
