@@ -101,18 +101,18 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 
 #### Breaking Type Changes
 
-- `V2_MetaArgs` -> `MetaArgs`
-- `V2_MetaDescriptor` -> `MetaDescriptor`
-- `V2_MetaFunction` -> `MetaFunction`
-- `V2_MetaMatch` -> `MetaMatch`
-- `V2_MetaMatches` -> `MetaMatches`
-- `V2_ServerRuntimeMetaArgs` -> `ServerRuntimeMetaArgs`
-- `V2_ServerRuntimeMetaDescriptor` -> `ServerRuntimeMetaDescriptor`
-- `V2_ServerRuntimeMetaFunction` -> `ServerRuntimeMetaFunction`
-- `V2_ServerRuntimeMetaMatch` -> `ServerRuntimeMetaMatch`
-- `V2_ServerRuntimeMetaMatches` -> `ServerRuntimeMetaMatches`
-- `AppData`/`RouteHandle` are no longer exported as they are just aliases for `unknown`
-- The following types were adjusted to align with underlying React Router types ([#7319](https://github.com/remix-run/remix/pull/7319)):
+- Removed `V2_` prefixes from `future.v2_meta` types as they are now the default behavior ([#6958](https://github.com/remix-run/remix/pull/6958))
+  - `V2_MetaArgs` -> `MetaArgs`
+  - `V2_MetaDescriptor` -> `MetaDescriptor`
+  - `V2_MetaFunction` -> `MetaFunction`
+  - `V2_MetaMatch` -> `MetaMatch`
+  - `V2_MetaMatches` -> `MetaMatches`
+  - `V2_ServerRuntimeMetaArgs` -> `ServerRuntimeMetaArgs`
+  - `V2_ServerRuntimeMetaDescriptor` -> `ServerRuntimeMetaDescriptor`
+  - `V2_ServerRuntimeMetaFunction` -> `ServerRuntimeMetaFunction`
+  - `V2_ServerRuntimeMetaMatch` -> `ServerRuntimeMetaMatch`
+  - `V2_ServerRuntimeMetaMatches` -> `ServerRuntimeMetaMatches`
+- The following types were adjusted to prefer `unknown` over `any` and to align with underlying React Router types ([#7319](https://github.com/remix-run/remix/pull/7319)):
   - Renamed the `useMatches()` return type from `RouteMatch` to `UIMatch`
   - Renamed `LoaderArgs`/`ActionArgs` to `LoaderFunctionArgs`/`ActionFunctionArgs`
   - `AppData` changed from `any` to `unknown`
@@ -121,12 +121,12 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
   - `UIMatch["handle"]` (`useMatches()[i].handle`) changed from `{ [k: string]: any }` to `unknown`
   - `Fetcher["data"]` (`useFetcher().data`) changed from `any` to `unknown`
   - `MetaMatch.handle` (used in `meta()`) changed from `any` to `unknown`
+  - `AppData`/`RouteHandle` are no longer exported as they are just aliases for `unknown`
 
 ## New Features
 
 - New [`create-remix`][createremix] CLI ([#6887](https://github.com/remix-run/remix/pull/6887))
   - Most notably, this removes the dropdown to choose your template/stack in favor of the `--template` flag and our ever-growing list of [available templates][templates]
-  - ❓ List out repo templates in this templates docs page
   - Adds a new `--overwrite` flag ([#7062](https://github.com/remix-run/remix/pull/7062))
   - Supports the `bun` package manager ([#7074](https://github.com/remix-run/remix/pull/7074))
 - Detect built mode via `build.mode` ([#6964](https://github.com/remix-run/remix/pull/6964))
@@ -134,7 +134,7 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
 - New `redirectDocument` utility to redirect via a fresh document load ([#7040](https://github.com/remix-run/remix/pull/7040), [#6842](https://github.com/remix-run/remix/pull/6842))
 - Add `error` to `meta` params so you can render error titles, etc. ([#7105](https://github.com/remix-run/remix/pull/7105))
 - `unstable_createRemixStub` now supports adding `meta`/`links` functions on stubbed Remix routes ([#7186](https://github.com/remix-run/remix/pull/7186))
-  - ⚠️ `unstable_createRemixStub` no longer supports the `element`/`errorElement` properties on routes. You must use `Component`/`ErrorBoundary` to match what you would export from a Remix route module.
+  - `unstable_createRemixStub` no longer supports the `element`/`errorElement` properties on routes. You must use `Component`/`ErrorBoundary` to match what you would export from a Remix route module.
 
 ## Other Notable Changes
 
